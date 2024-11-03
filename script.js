@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /**
- * Theme toggle functionality
+ * Theme toggle functionality with animations
  */
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
@@ -28,19 +28,55 @@ const toggleTheme = () => {
     const currentTheme = htmlElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
+    // Add transition class before changing theme
+    document.body.classList.add('theme-transition');
+    
+    // Set timeout to remove transition class after animation completes
+    setTimeout(() => {
+        document.body.classList.remove('theme-transition');
+    }, 1000);
+    
     htmlElement.setAttribute('data-theme', newTheme);
     
     if (themeIcon) {
-        themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        // Animate icon rotation and swap
+        themeIcon.style.transform = 'rotate(360deg)';
+        setTimeout(() => {
+            themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            themeIcon.style.transform = 'rotate(0)';
+        }, 150);
     }
 
     if (themeText) {
-        themeText.textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+        // Fade out text, change it, then fade in
+        themeText.style.opacity = '0';
+        setTimeout(() => {
+            themeText.textContent = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+            themeText.style.opacity = '1';
+        }, 150);
     }
     
     // Save theme preference
     localStorage.setItem('theme', newTheme);
 };
+
+// Add transition styles
+const style = document.createElement('style');
+style.textContent = `
+    .theme-transition * {
+        transition: background-color 0.5s ease, 
+                    color 0.5s ease,
+                    border-color 0.5s ease,
+                    box-shadow 0.5s ease !important;
+    }
+    #theme-toggle i {
+        transition: transform 0.3s ease;
+    }
+    #theme-toggle span {
+        transition: opacity 0.3s ease;
+    }
+`;
+document.head.appendChild(style);
 
 // Set initial theme based on saved preference or system preference
 const savedTheme = localStorage.getItem('theme');

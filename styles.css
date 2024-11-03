@@ -26,12 +26,17 @@
             --feature-title: #4a69bd;
         }
 
+        /* Theme transition animations */
+        :root {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         body {
             line-height: 1.7;
             color: var(--text-color);
             overflow-x: hidden;
             background-color: var(--bg-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         /* Header */
@@ -44,6 +49,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background 0.5s ease;
         }
 
         nav {
@@ -155,6 +161,7 @@
             padding: clamp(5rem, 10vw, 10rem) 2rem;
             background-color: var(--bg-color);
             box-shadow: 0 0 30px rgba(0,0,0,0.03);
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         .features-grid {
@@ -206,7 +213,7 @@
             font-size: clamp(1.4rem, 3vw, 1.7rem);
             font-weight: 600;
             letter-spacing: -0.3px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, color 0.5s ease;
         }
 
         .feature-card:hover h3 {
@@ -218,6 +225,7 @@
             padding: clamp(5rem, 10vw, 10rem) 2rem;
             text-align: center;
             background-color: var(--bg-color);
+            transition: background-color 0.5s ease;
         }
 
         .location h2 {
@@ -226,6 +234,7 @@
             font-size: clamp(2rem, 4vw, 2.6rem);
             font-weight: 600;
             letter-spacing: -0.3px;
+            transition: color 0.5s ease;
         }
 
         .map-container {
@@ -236,6 +245,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 15px 35px var(--card-shadow);
+            transition: box-shadow 0.5s ease;
         }
 
         /* Contact Section */
@@ -244,6 +254,7 @@
             color: white;
             padding: clamp(5rem, 10vw, 10rem) 2rem;
             text-align: center;
+            transition: background 0.5s ease;
         }
 
         .contact h2 {
@@ -290,6 +301,7 @@
 
         .theme-toggle i {
             font-size: 1rem;
+            transition: transform 0.5s ease;
         }
 
         .theme-toggle span {
@@ -318,6 +330,7 @@
                 padding: 1rem 0;
                 gap: 0;
                 margin-right: 0;
+                transition: background 0.5s ease;
             }
 
             .nav-links.show {
