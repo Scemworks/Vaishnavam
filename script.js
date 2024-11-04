@@ -1,10 +1,10 @@
 /**
- * Initialize page functionality
+ * Initialize page functionality when DOM content is loaded
  */
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initThemeToggle();
-    initFacilityCards();
+    initFlashcards();
     initParallaxEffect();
     initFormValidation();
     initMobileMenu();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Smooth scrolling for navigation
+ * Implements smooth scrolling behavior for navigation links
  */
 const initSmoothScroll = () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -26,7 +26,7 @@ const initSmoothScroll = () => {
 };
 
 /**
- * Theme toggle with animations
+ * Manages theme toggling functionality with smooth transitions
  */
 const initThemeToggle = () => {
     const themeToggle = document.getElementById('theme-toggle');
@@ -39,63 +39,74 @@ const initThemeToggle = () => {
         themeToggle.style.marginRight = '1rem';
     }
 
-    // Add theme styles
+    // Inject dynamic theme styles
     const style = document.createElement('style');
     style.textContent = `
         .theme-transition * {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .facility-card {
+        .flashcard {
             position: relative;
-            overflow: hidden;
-            border-radius: 8px;
+            width: 100%;
+            height: 300px;
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
             background: var(--card-bg);
+            border-radius: 8px;
             box-shadow: 0 4px 6px var(--card-shadow);
         }
         
-        .facility-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        .card-back {
+            transform: rotateY(180deg);
+            background: var(--card-back);
         }
         
-        .facility-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
+        .flashcard-inner.flipped {
+            transform: rotateY(180deg);
         }
         
-        .facility-card:hover .facility-image {
-            transform: scale(1.1);
-        }
-        
-        .facility-card:hover .facility-content {
-            transform: translateY(0);
-        }
-        
-        .facility-title {
+        .card-title {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            color: var(--card-text);
         }
         
-        .facility-description {
+        .card-description {
             font-size: 1rem;
             line-height: 1.6;
+            color: var(--card-text);
             opacity: 0.9;
         }
     `;
     document.head.appendChild(style);
 
-    // Handle theme toggle
+    /**
+     * Toggles between light and dark themes with animation
+     */
     const toggleTheme = () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -109,6 +120,10 @@ const initThemeToggle = () => {
         updateThemeUI(newTheme);
     };
 
+    /**
+     * Updates UI elements when theme changes
+     * @param {string} theme - The new theme ('light' or 'dark')
+     */
     const updateThemeUI = (theme) => {
         if (themeIcon) {
             themeIcon.style.transform = 'rotate(360deg)';
@@ -127,7 +142,7 @@ const initThemeToggle = () => {
         }
     };
 
-    // Set initial theme
+    // Initialize theme based on user preference or system settings
     const savedTheme = localStorage.getItem('theme') || 
                       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     htmlElement.setAttribute('data-theme', savedTheme);
@@ -137,39 +152,55 @@ const initThemeToggle = () => {
 };
 
 /**
- * Initialize facility cards with hover effects
+ * Initializes interactive feature cards with flip animation
  */
-const initFacilityCards = () => {
-    const facilities = [
+const initFlashcards = () => {
+    const features = [
         {
             title: 'Luxury Rooms',
-            description: 'Experience ultimate comfort in our meticulously designed rooms',
-            image: 'room.jpg'
+            frontDescription: 'Experience ultimate comfort',
+            backDescription: 'Meticulously designed rooms with modern amenities',
+            icon: 'fas fa-bed'
         },
         {
             title: 'Fine Dining',
-            description: 'Savor exquisite cuisine at our world-class restaurants',
-            image: 'dining.jpg'
+            frontDescription: 'Exquisite cuisine',
+            backDescription: 'Delicious meals prepared by expert chefs',
+            icon: 'fas fa-utensils'
         },
         {
             title: 'Wellness Center',
-            description: 'Rejuvenate your body and mind at our premium spa and fitness center',
-            image: 'spa.jpg'
+            frontDescription: 'Rejuvenate yourself',
+            backDescription: 'Premium facilities for your health and wellness',
+            icon: 'fas fa-spa'
         }
     ];
 
-    const facilitiesContainer = document.querySelector('.features-grid');
-    if (facilitiesContainer) {
-        facilitiesContainer.innerHTML = facilities.map(facility => `
-            <div class="facility-card">
-                <img src="${facility.image}" alt="${facility.title}" class="facility-image">
-                <div class="facility-content">
-                    <h3 class="facility-title">${facility.title}</h3>
-                    <p class="facility-description">${facility.description}</p>
+    const featuresContainer = document.querySelector('.features-grid');
+    if (featuresContainer) {
+        featuresContainer.innerHTML = features.map(feature => `
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="card-front">
+                        <i class="${feature.icon} fa-3x"></i>
+                        <h3 class="card-title">${feature.title}</h3>
+                        <p class="card-description">${feature.frontDescription}</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">${feature.title}</h3>
+                        <p class="card-description">${feature.backDescription}</p>
+                    </div>
                 </div>
             </div>
         `).join('');
+
+        // Initialize flip animation handlers
+        document.querySelectorAll('.flashcard-inner').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
     }
 };
 
-// ... rest of the code remains unchanged ...
+// Additional functionality to be implemented

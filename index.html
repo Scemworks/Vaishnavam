@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnavam Boys Hostel</title>
+    <meta name="description" content="Vaishnavam Boys Hostel - Premium accommodation with modern amenities in Kerala">
+    <meta name="keywords" content="boys hostel, student accommodation, Kerala hostel, Sreekrishnapuram hostel">
+    <title>Vaishnavam Boys Hostel | Premium Student Accommodation</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
                 <h1>VAISHNAVAM</h1>
-                <span class="subtitle">BOYS HOSTEL</span>
+                <span class="subtitle">PREMIUM BOYS HOSTEL</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#rooms">Rooms</a></li>
-                <li><a href="#dining">Dining</a></li>
-                <li><a href="#facilities">Facilities</a></li>
-                <li><a href="#location">Location</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="#dining" class="nav-link">Dining</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#location" class="nav-link">Location</a></li>
                 <li><a href="#contact" class="book-now">Book Now</a></li>
             </ul>
             <div class="nav-controls">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
-                <div class="nav-toggle" onclick="toggleMobileMenu()">
+                <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -39,35 +44,57 @@
             <div class="hero-slider">
                 <div class="hero-slide active">
                     <div class="hero-content">
-                        <h2>Experience Luxury Living</h2>
-                        <p>Premium accommodation designed for your comfort</p>
-                        <a href="#contact" class="cta-button">Reserve Now</a>
+                        <h2>Experience Premium Living</h2>
+                        <p>Modern accommodation designed for academic excellence</p>
+                        <a href="#contact" class="cta-button">Reserve Your Room</a>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
+            <div class="scroll-indicator" aria-hidden="true">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </section>
 
         <section class="rooms" id="rooms">
             <div class="container">
-                <h2>Our Accommodations</h2>
+                <h2>Premium Accommodations</h2>
                 <div class="room-grid">
                     <div class="room-card">
-                        <img src="room-standard.jpg" alt="Standard Room">
-                        <div class="room-details">
-                            <h3>Standard Room</h3>
-                            <p>Comfortable living space with essential amenities</p>
-                            <a href="#contact" class="room-link">View Details</a>
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="room-standard.jpg" alt="Standard Room Interior" loading="lazy">
+                                <h3>Standard Room</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>Standard Room Features</h3>
+                                <ul>
+                                    <li><i class="fas fa-bed"></i> Single/Double Occupancy</li>
+                                    <li><i class="fas fa-desk"></i> Study Table & Chair</li>
+                                    <li><i class="fas fa-door-closed"></i> Wardrobe</li>
+                                    <li><i class="fas fa-bolt"></i> 24/7 Power Backup</li>
+                                    <li><i class="fas fa-broom"></i> Daily Housekeeping</li>
+                                </ul>
+                                <a href="#contact" class="room-link">Book Now</a>
+                            </div>
                         </div>
                     </div>
                     <div class="room-card">
-                        <img src="room-deluxe.jpg" alt="Deluxe Room">
-                        <div class="room-details">
-                            <h3>Deluxe Room</h3>
-                            <p>Enhanced comfort with premium furnishings</p>
-                            <a href="#contact" class="room-link">View Details</a>
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="room-deluxe.jpg" alt="Deluxe Room Interior" loading="lazy">
+                                <h3>Deluxe Room</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>Deluxe Room Features</h3>
+                                <ul>
+                                    <li><i class="fas fa-star"></i> Premium Furnishings</li>
+                                    <li><i class="fas fa-expand-alt"></i> Larger Space</li>
+                                    <li><i class="fas fa-door-open"></i> Private Balcony</li>
+                                    <li><i class="fas fa-concierge-bell"></i> Enhanced Amenities</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Premium Location</li>
+                                </ul>
+                                <a href="#contact" class="room-link">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,20 +103,25 @@
 
         <section class="dining" id="dining">
             <div class="container">
-                <h2>Dining Experience</h2>
+                <h2>Dining Excellence</h2>
                 <div class="dining-content">
-                    <div class="dining-image">
-                        <img src="dining-hall.jpg" alt="Dining Hall">
-                    </div>
-                    <div class="dining-info">
-                        <h3>Premium Dining Services</h3>
-                        <p>Enjoy nutritious and delicious meals prepared by our expert chefs</p>
-                        <ul class="dining-features">
-                            <li>Breakfast, Lunch & Dinner</li>
-                            <li>Vegetarian & Non-vegetarian options</li>
-                            <li>Hygienic preparation</li>
-                            <li>Special diet accommodation</li>
-                        </ul>
+                    <div class="dining-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="dining-hall.jpg" alt="Modern Dining Facility" loading="lazy">
+                                <h3>Premium Dining Services</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>Culinary Features</h3>
+                                <ul>
+                                    <li><i class="fas fa-utensils"></i> Breakfast, Lunch & Dinner</li>
+                                    <li><i class="fas fa-leaf"></i> Vegetarian & Non-vegetarian options</li>
+                                    <li><i class="fas fa-check-circle"></i> Hygienic preparation</li>
+                                    <li><i class="fas fa-apple-alt"></i> Special diet accommodation</li>
+                                    <li><i class="fas fa-kitchen-set"></i> Modern Kitchen Facilities</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,25 +131,49 @@
             <div class="container">
                 <h2>Premium Amenities</h2>
                 <div class="facilities-grid">
-                    <div class="facility-item">
-                        <i class="fas fa-wifi"></i>
-                        <h3>High-Speed WiFi</h3>
-                        <p>Stay connected with seamless internet access</p>
+                    <div class="facility-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-wifi"></i>
+                                <h3>High-Speed WiFi</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Enterprise-grade internet connectivity for seamless online learning</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="facility-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>24/7 Security</h3>
-                        <p>Round-the-clock surveillance and security staff</p>
+                    <div class="facility-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Advanced Security</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>24/7 security with CCTV surveillance and access control</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="facility-item">
-                        <i class="fas fa-dumbbell"></i>
-                        <h3>Fitness Center</h3>
-                        <p>Modern equipment for your workout needs</p>
+                    <div class="facility-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-dumbbell"></i>
+                                <h3>Fitness Center</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>State-of-the-art gym with professional equipment</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="facility-item">
-                        <i class="fas fa-book"></i>
-                        <h3>Study Areas</h3>
-                        <p>Quiet spaces for focused learning</p>
+                    <div class="facility-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-book"></i>
+                                <h3>Study Zones</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Dedicated quiet areas with ergonomic furniture for focused studying</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,7 +181,7 @@
 
         <section class="location" id="location">
             <div class="container">
-                <h2>Location</h2>
+                <h2>Strategic Location</h2>
                 <div class="location-content">
                     <div class="map-container">
                         <iframe 
@@ -135,18 +191,25 @@
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy"
+                            title="Vaishnavam Boys Hostel Location"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div class="location-info">
-                        <h3>Strategic Location</h3>
-                        <p>Conveniently located in Mannampatta, offering easy access to educational institutions and local amenities.</p>
-                        <address>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Vaishnavam Boys Hostel<br>
-                            Mannampatta, Sreekrishnapuram<br>
-                            Kerala 679513
-                        </address>
+                    <div class="location-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Prime Location</h3>
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="card-back">
+                                <h3>Address</h3>
+                                <address>
+                                    Vaishnavam Boys Hostel<br>
+                                    Mannampatta, Sreekrishnapuram<br>
+                                    Kerala 679513
+                                </address>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,31 +217,39 @@
 
         <section class="contact" id="contact">
             <div class="container">
-                <h2>Contact Us</h2>
+                <h2>Connect With Us</h2>
                 <div class="contact-wrapper">
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Call Us</h3>
-                                <p><a href="tel:+917306899218">+91 7306 899 218</a></p>
+                        <div class="contact-card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fas fa-phone"></i>
+                                    <h3>Direct Contact</h3>
+                                </div>
+                                <div class="card-back">
+                                    <p><a href="tel:+917306899218" class="contact-link">+91 7306 899 218</a></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <h3>WhatsApp</h3>
-                                <p><a href="https://wa.me/917306899218">Message us on WhatsApp</a></p>
+                        <div class="contact-card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <h3>WhatsApp</h3>
+                                </div>
+                                <div class="card-back">
+                                    <p><a href="https://wa.me/917306899218" class="contact-link">Connect on WhatsApp</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form">
-                        <h3>Enquiry Form</h3>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                    <form class="contact-form" id="enquiryForm">
+                        <h3>Reservation Enquiry</h3>
+                        <input type="text" placeholder="Full Name" required aria-label="Full Name">
+                        <input type="email" placeholder="Email Address" required aria-label="Email Address">
+                        <input type="tel" placeholder="Phone Number" required aria-label="Phone Number">
+                        <textarea placeholder="Your Message" required aria-label="Your Message"></textarea>
+                        <button type="submit" class="submit-btn">Submit Enquiry</button>
                     </form>
                 </div>
             </div>
@@ -190,21 +261,21 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>VAISHNAVAM</h3>
-                    <p>Your Home Away From Home</p>
+                    <p>Excellence in Student Living</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Quick Navigation</h4>
                     <ul>
-                        <li><a href="#rooms">Rooms</a></li>
-                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#rooms">Accommodations</a></li>
+                        <li><a href="#facilities">Amenities</a></li>
                         <li><a href="#location">Location</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
-                    <h4>Connect With Us</h4>
+                    <h4>Stay Connected</h4>
                     <div class="social-links">
-                        <a href="https://wa.me/917306899218" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/917306899218" aria-label="Connect on WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
