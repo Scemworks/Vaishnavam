@@ -16,26 +16,31 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo" data-aos="fade-right">
+        <nav class="navbar">
+            <div class="navbar-brand" data-aos="fade-right">
                 <h1>VAISHNAVAM</h1>
-                <span class="subtitle">PREMIUM BOYS HOSTEL</span>
+                <span class="navbar-subtitle">PREMIUM BOYS HOSTEL</span>
             </div>
-            <ul class="nav-links" data-aos="fade-left">
-                <li><a href="#home" class="nav-link hover-effect">Home</a></li>
-                <li><a href="#rooms" class="nav-link hover-effect">Rooms</a></li>
-                <li><a href="#dining" class="nav-link hover-effect">Dining</a></li>
-                <li><a href="#facilities" class="nav-link hover-effect">Facilities</a></li>
-                <li><a href="#location" class="nav-link hover-effect">Location</a></li>
-                <li><a href="#contact" class="btn book-now pulse-effect">Book Now</a></li>
-            </ul>
-            <div class="nav-controls" data-aos="fade-left">
-                <button id="theme-toggle" class="btn theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon rotate-effect"></i>
-                </button>
-                <button class="btn nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+            
+            <button class="navbar-toggler" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="navbar-collapse">
+                <ul class="navbar-nav" data-aos="fade-left">
+                    <li class="nav-item"><a href="#home" class="nav-link hover-effect">Home</a></li>
+                    <li class="nav-item"><a href="#rooms" class="nav-link hover-effect">Rooms</a></li>
+                    <li class="nav-item"><a href="#dining" class="nav-link hover-effect">Dining</a></li>
+                    <li class="nav-item"><a href="#facilities" class="nav-link hover-effect">Facilities</a></li>
+                    <li class="nav-item"><a href="#location" class="nav-link hover-effect">Location</a></li>
+                    <li class="nav-item"><a href="#contact" class="btn btn-primary pulse-effect">Book Now</a></li>
+                </ul>
+
+                <div class="navbar-controls" data-aos="fade-left">
+                    <button id="theme-toggle" class="btn theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon rotate-effect"></i>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
