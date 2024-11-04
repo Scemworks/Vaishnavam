@@ -1,57 +1,73 @@
-// Mobile menu toggle functionality
+// Mobile menu toggle functionality with smooth transitions
 function toggleMobileMenu() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    navbarCollapse.classList.toggle('show');
-    
     const toggler = document.querySelector('.navbar-toggler');
     const icon = toggler.querySelector('i');
     
+    // Add smooth transition
+    navbarCollapse.style.transition = 'all 0.3s ease-in-out';
+    navbarCollapse.classList.toggle('show');
+    
+    // Animate icon transition
+    icon.style.transition = 'transform 0.3s ease';
     if (navbarCollapse.classList.contains('show')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
+        icon.classList.replace('fa-bars', 'fa-times');
+        icon.style.transform = 'rotate(180deg)';
     } else {
-        icon.classList.remove('fa-times'); 
-        icon.classList.add('fa-bars');
+        icon.classList.replace('fa-times', 'fa-bars');
+        icon.style.transform = 'rotate(0)';
     }
 }
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking outside, with smooth animation
 document.addEventListener('click', (e) => {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const toggler = document.querySelector('.navbar-toggler');
     
-    if (!toggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-        navbarCollapse.classList.remove('show');
+    if (!toggler.contains(e.target) && !navbarCollapse.contains(e.target) && navbarCollapse.classList.contains('show')) {
         const icon = toggler.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        navbarCollapse.style.transition = 'all 0.3s ease-in-out';
+        navbarCollapse.classList.remove('show');
+        icon.style.transition = 'transform 0.3s ease';
+        icon.classList.replace('fa-times', 'fa-bars');
+        icon.style.transform = 'rotate(0)';
     }
 });
 
-// Close mobile menu when clicking nav links
+// Enhanced mobile menu navigation with smooth transitions
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         const navbarCollapse = document.querySelector('.navbar-collapse');
         const toggler = document.querySelector('.navbar-toggler');
         
-        if (window.innerWidth <= 768) {
-            navbarCollapse.classList.remove('show');
+        if (window.innerWidth <= 768 && navbarCollapse.classList.contains('show')) {
             const icon = toggler.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            // Smooth transition when closing
+            navbarCollapse.style.transition = 'all 0.3s ease-in-out';
+            navbarCollapse.classList.remove('show');
+            icon.style.transition = 'transform 0.3s ease';
+            icon.classList.replace('fa-times', 'fa-bars');
+            icon.style.transform = 'rotate(0)';
         }
     });
 });
 
-// Update menu state on window resize
+// Responsive menu handling on window resize with debouncing
+let resizeTimer;
 window.addEventListener('resize', () => {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const toggler = document.querySelector('.navbar-toggler');
-    
-    if (window.innerWidth > 768) {
-        navbarCollapse.classList.remove('show');
-        const icon = toggler.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
+    // Debounce resize events for better performance
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const toggler = document.querySelector('.navbar-toggler');
+        
+        if (window.innerWidth > 768 && navbarCollapse.classList.contains('show')) {
+            const icon = toggler.querySelector('i');
+            navbarCollapse.style.transition = 'all 0.3s ease-in-out';
+            navbarCollapse.classList.remove('show');
+            icon.style.transition = 'transform 0.3s ease';
+            icon.classList.replace('fa-times', 'fa-bars');
+            icon.style.transform = 'rotate(0)';
+        }
+    }, 250); // Wait for resize to finish before executing
 });

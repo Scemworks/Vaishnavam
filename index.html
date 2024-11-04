@@ -13,22 +13,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Add meta theme color for mobile browsers -->
+    <meta name="theme-color" content="#ffffff">
+    <!-- Add apple touch icon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="navbar-brand" data-aos="fade-right">
                 <h1>VAISHNAVAM</h1>
                 <span class="navbar-subtitle">PREMIUM BOYS HOSTEL</span>
             </div>
             
-            <button class="navbar-toggler" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
+            <button class="navbar-toggler" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <span class="sr-only">Menu</span>
             </button>
 
-            <div class="navbar-collapse">
+            <div class="navbar-collapse" id="navbar-menu">
                 <ul class="navbar-nav" data-aos="fade-left">
-                    <li class="nav-item"><a href="#home" class="nav-link hover-effect">Home</a></li>
+                    <li class="nav-item"><a href="#home" class="nav-link hover-effect" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="#rooms" class="nav-link hover-effect">Rooms</a></li>
                     <li class="nav-item"><a href="#dining" class="nav-link hover-effect">Dining</a></li>
                     <li class="nav-item"><a href="#facilities" class="nav-link hover-effect">Facilities</a></li>
@@ -38,19 +45,20 @@
 
                 <div class="navbar-controls" data-aos="fade-left">
                     <button id="theme-toggle" class="btn theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon rotate-effect"></i>
+                        <i class="fas fa-moon rotate-effect" aria-hidden="true"></i>
+                        <span class="sr-only">Toggle dark mode</span>
                     </button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero" id="home">
+    <main id="main-content" tabindex="-1">
+        <section class="hero" id="home" aria-labelledby="hero-title">
             <div class="hero-slider" data-aos="fade-up">
                 <div class="hero-slide active">
                     <div class="hero-content">
-                        <h2 class="typing-effect">Experience Premium Living</h2>
+                        <h2 id="hero-title" class="typing-effect">Experience Premium Living</h2>
                         <p class="fade-in-effect">Modern accommodation designed for academic excellence</p>
                         <a href="#contact" class="btn cta-button bounce-effect">Reserve Your Room</a>
                     </div>
@@ -61,25 +69,25 @@
             </div>
         </section>
 
-        <section class="rooms" id="rooms">
+        <section class="rooms" id="rooms" aria-labelledby="rooms-title">
             <div class="container">
-                <h2 data-aos="fade-up">Premium Accommodations</h2>
+                <h2 id="rooms-title" data-aos="fade-up">Premium Accommodations</h2>
                 <div class="room-grid grid">
                     <div class="flashcard" data-aos="flip-left">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <img src="room-standard.jpg" alt="Standard Room Interior" loading="lazy">
+                                <img src="room-standard.jpg" alt="Standard Room Interior" loading="lazy" width="400" height="300">
                                 <h3>Standard Room</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Standard Room Features</h3>
                                     <ul class="feature-list">
-                                        <li class="slide-in-effect"><i class="fas fa-bed"></i> Single/Double Occupancy</li>
-                                        <li class="slide-in-effect"><i class="fas fa-desk"></i> Study Table & Chair</li>
-                                        <li class="slide-in-effect"><i class="fas fa-door-closed"></i> Wardrobe</li>
-                                        <li class="slide-in-effect"><i class="fas fa-bolt"></i> 24/7 Power Backup</li>
-                                        <li class="slide-in-effect"><i class="fas fa-broom"></i> Daily Housekeeping</li>
+                                        <li class="slide-in-effect"><i class="fas fa-bed" aria-hidden="true"></i> Single/Double Occupancy</li>
+                                        <li class="slide-in-effect"><i class="fas fa-desk" aria-hidden="true"></i> Study Table & Chair</li>
+                                        <li class="slide-in-effect"><i class="fas fa-door-closed" aria-hidden="true"></i> Wardrobe</li>
+                                        <li class="slide-in-effect"><i class="fas fa-bolt" aria-hidden="true"></i> 24/7 Power Backup</li>
+                                        <li class="slide-in-effect"><i class="fas fa-broom" aria-hidden="true"></i> Daily Housekeeping</li>
                                     </ul>
                                     <a href="#contact" class="btn room-link pulse-effect">Book Now</a>
                                 </div>
@@ -89,18 +97,18 @@
                     <div class="flashcard" data-aos="flip-right">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <img src="room-deluxe.jpg" alt="Deluxe Room Interior" loading="lazy">
+                                <img src="room-deluxe.jpg" alt="Deluxe Room Interior" loading="lazy" width="400" height="300">
                                 <h3>Deluxe Room</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Deluxe Room Features</h3>
                                     <ul class="feature-list">
-                                        <li class="slide-in-effect"><i class="fas fa-star"></i> Premium Furnishings</li>
-                                        <li class="slide-in-effect"><i class="fas fa-expand-alt"></i> Larger Space</li>
-                                        <li class="slide-in-effect"><i class="fas fa-door-open"></i> Private Balcony</li>
-                                        <li class="slide-in-effect"><i class="fas fa-concierge-bell"></i> Enhanced Amenities</li>
-                                        <li class="slide-in-effect"><i class="fas fa-map-marker-alt"></i> Premium Location</li>
+                                        <li class="slide-in-effect"><i class="fas fa-star" aria-hidden="true"></i> Premium Furnishings</li>
+                                        <li class="slide-in-effect"><i class="fas fa-expand-alt" aria-hidden="true"></i> Larger Space</li>
+                                        <li class="slide-in-effect"><i class="fas fa-door-open" aria-hidden="true"></i> Private Balcony</li>
+                                        <li class="slide-in-effect"><i class="fas fa-concierge-bell" aria-hidden="true"></i> Enhanced Amenities</li>
+                                        <li class="slide-in-effect"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Premium Location</li>
                                     </ul>
                                     <a href="#contact" class="btn room-link pulse-effect">Book Now</a>
                                 </div>
@@ -111,25 +119,25 @@
             </div>
         </section>
 
-        <section class="dining" id="dining">
+        <section class="dining" id="dining" aria-labelledby="dining-title">
             <div class="container">
-                <h2 data-aos="fade-up">Dining Excellence</h2>
+                <h2 id="dining-title" data-aos="fade-up">Dining Excellence</h2>
                 <div class="dining-content">
                     <div class="flashcard" data-aos="zoom-in">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <img src="dining-hall.jpg" alt="Modern Dining Facility" loading="lazy">
+                                <img src="dining-hall.jpg" alt="Modern Dining Facility" loading="lazy" width="400" height="300">
                                 <h3>Premium Dining Services</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Culinary Features</h3>
                                     <ul class="feature-list">
-                                        <li class="slide-in-effect"><i class="fas fa-utensils"></i> Breakfast, Lunch & Dinner</li>
-                                        <li class="slide-in-effect"><i class="fas fa-leaf"></i> Vegetarian & Non-vegetarian options</li>
-                                        <li class="slide-in-effect"><i class="fas fa-check-circle"></i> Hygienic preparation</li>
-                                        <li class="slide-in-effect"><i class="fas fa-apple-alt"></i> Special diet accommodation</li>
-                                        <li class="slide-in-effect"><i class="fas fa-kitchen-set"></i> Modern Kitchen Facilities</li>
+                                        <li class="slide-in-effect"><i class="fas fa-utensils" aria-hidden="true"></i> Breakfast, Lunch & Dinner</li>
+                                        <li class="slide-in-effect"><i class="fas fa-leaf" aria-hidden="true"></i> Vegetarian & Non-vegetarian options</li>
+                                        <li class="slide-in-effect"><i class="fas fa-check-circle" aria-hidden="true"></i> Hygienic preparation</li>
+                                        <li class="slide-in-effect"><i class="fas fa-apple-alt" aria-hidden="true"></i> Special diet accommodation</li>
+                                        <li class="slide-in-effect"><i class="fas fa-kitchen-set" aria-hidden="true"></i> Modern Kitchen Facilities</li>
                                     </ul>
                                 </div>
                             </div>
@@ -139,14 +147,14 @@
             </div>
         </section>
 
-        <section class="facilities" id="facilities">
+        <section class="facilities" id="facilities" aria-labelledby="facilities-title">
             <div class="container">
-                <h2 data-aos="fade-up">Premium Amenities</h2>
+                <h2 id="facilities-title" data-aos="fade-up">Premium Amenities</h2>
                 <div class="facilities-grid grid">
                     <div class="flashcard" data-aos="zoom-in">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-wifi bounce-effect"></i>
+                                <i class="fas fa-wifi bounce-effect" aria-hidden="true"></i>
                                 <h3>High-Speed WiFi</h3>
                             </div>
                             <div class="flashcard-back">
@@ -159,7 +167,7 @@
                     <div class="flashcard" data-aos="zoom-in" data-aos-delay="100">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-shield-alt bounce-effect"></i>
+                                <i class="fas fa-shield-alt bounce-effect" aria-hidden="true"></i>
                                 <h3>Advanced Security</h3>
                             </div>
                             <div class="flashcard-back">
@@ -172,7 +180,7 @@
                     <div class="flashcard" data-aos="zoom-in" data-aos-delay="200">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-dumbbell bounce-effect"></i>
+                                <i class="fas fa-dumbbell bounce-effect" aria-hidden="true"></i>
                                 <h3>Fitness Center</h3>
                             </div>
                             <div class="flashcard-back">
@@ -185,7 +193,7 @@
                     <div class="flashcard" data-aos="zoom-in" data-aos-delay="300">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-book bounce-effect"></i>
+                                <i class="fas fa-book bounce-effect" aria-hidden="true"></i>
                                 <h3>Study Zones</h3>
                             </div>
                             <div class="flashcard-back">
@@ -199,9 +207,9 @@
             </div>
         </section>
 
-        <section class="location" id="location">
+        <section class="location" id="location" aria-labelledby="location-title">
             <div class="container">
-                <h2 data-aos="fade-up">Strategic Location</h2>
+                <h2 id="location-title" data-aos="fade-up">Strategic Location</h2>
                 <div class="location-content">
                     <div class="map-container" data-aos="fade-right">
                         <iframe 
@@ -219,7 +227,7 @@
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <h3>Prime Location</h3>
-                                <i class="fas fa-map-marker-alt bounce-effect"></i>
+                                <i class="fas fa-map-marker-alt bounce-effect" aria-hidden="true"></i>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
@@ -237,15 +245,15 @@
             </div>
         </section>
 
-        <section class="contact" id="contact">
+        <section class="contact" id="contact" aria-labelledby="contact-title">
             <div class="container">
-                <h2 data-aos="fade-up">Connect With Us</h2>
+                <h2 id="contact-title" data-aos="fade-up">Connect With Us</h2>
                 <div class="contact-wrapper">
                     <div class="contact-info">
                         <div class="flashcard" data-aos="flip-left">
                             <div class="flashcard-inner">
                                 <div class="flashcard-front">
-                                    <i class="fas fa-phone bounce-effect"></i>
+                                    <i class="fas fa-phone bounce-effect" aria-hidden="true"></i>
                                     <h3>Direct Contact</h3>
                                 </div>
                                 <div class="flashcard-back">
@@ -258,7 +266,7 @@
                         <div class="flashcard" data-aos="flip-right">
                             <div class="flashcard-inner">
                                 <div class="flashcard-front">
-                                    <i class="fab fa-whatsapp bounce-effect"></i>
+                                    <i class="fab fa-whatsapp bounce-effect" aria-hidden="true"></i>
                                     <h3>WhatsApp</h3>
                                 </div>
                                 <div class="flashcard-back">
@@ -271,10 +279,22 @@
                     </div>
                     <form class="contact-form" id="enquiryForm" data-aos="fade-up">
                         <h3>Reservation Enquiry</h3>
-                        <input type="text" placeholder="Full Name" required aria-label="Full Name" class="input-effect">
-                        <input type="email" placeholder="Email Address" required aria-label="Email Address" class="input-effect">
-                        <input type="tel" placeholder="Phone Number" required aria-label="Phone Number" class="input-effect">
-                        <textarea placeholder="Your Message" required aria-label="Your Message" class="input-effect"></textarea>
+                        <div class="form-group">
+                            <label for="fullName" class="sr-only">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Full Name" required class="input-effect">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email Address</label>
+                            <input type="email" id="email" placeholder="Email Address" required class="input-effect">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="sr-only">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Phone Number" required class="input-effect">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" placeholder="Your Message" required class="input-effect"></textarea>
+                        </div>
                         <button type="submit" class="submit-btn pulse-effect">Submit Enquiry</button>
                     </form>
                 </div>
@@ -282,7 +302,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand" data-aos="fade-right">
@@ -301,7 +321,10 @@
                 <div class="footer-social" data-aos="fade-left">
                     <h4>Stay Connected</h4>
                     <div class="social-links">
-                        <a href="https://wa.me/917306899218" aria-label="Connect on WhatsApp" class="social-link bounce-effect"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/917306899218" aria-label="Connect on WhatsApp" class="social-link bounce-effect">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span class="sr-only">WhatsApp</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -316,7 +339,8 @@
         AOS.init({
             duration: 1000,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
         });
     </script>
     <script src="script.js"></script>
