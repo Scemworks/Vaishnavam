@@ -3,7 +3,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', 'Arial', sans-serif;
-            scroll-behavior: smooth; /* Added for smooth scrolling */
+            scroll-behavior: auto; /* Changed from smooth to auto to allow page load at top */
         }
 
         :root[data-theme="light"] {
