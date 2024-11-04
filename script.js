@@ -75,6 +75,37 @@ style.textContent = `
     #theme-toggle span {
         transition: opacity 0.3s ease;
     }
+    .feature-card {
+        cursor: pointer;
+        perspective: 1000px;
+    }
+    .feature-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .feature-card.flipped .feature-card-inner {
+        transform: rotateY(180deg);
+    }
+    .feature-card-front, .feature-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 10px;
+    }
+    .feature-card-back {
+        background: var(--card-back);
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 document.head.appendChild(style);
 
@@ -102,7 +133,7 @@ if (savedTheme) {
 themeToggle?.addEventListener('click', toggleTheme);
 
 /**
- * Feature card animations using Intersection Observer
+ * Interactive feature cards with flip animation
  */
 const featureCards = document.querySelectorAll('.feature-card');
 const observerOptions = {
@@ -114,27 +145,56 @@ const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0) rotateY(0)';
+            entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
 featureCards.forEach((card, index) => {
+    // Create inner container for flip effect
+    const cardInner = document.createElement('div');
+    cardInner.className = 'feature-card-inner';
+    
+    // Create front side
+    const cardFront = document.createElement('div');
+    cardFront.className = 'feature-card-front';
+    cardFront.innerHTML = card.innerHTML;
+    
+    // Create back side with additional info
+    const cardBack = document.createElement('div');
+    cardBack.className = 'feature-card-back';
+    cardBack.innerHTML = `<p>${card.getAttribute('data-description') || 'Click to learn more about this feature!'}</p>`;
+    
+    // Set up card structure
+    cardInner.appendChild(cardFront);
+    cardInner.appendChild(cardBack);
+    card.innerHTML = '';
+    card.appendChild(cardInner);
+    
+    // Initial state
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px) rotateY(180deg)';
+    card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.8s ease';
-    // Add delay for staggered animation
     card.style.transitionDelay = `${index * 0.2}s`;
     observer.observe(card);
     
+    // Add click handler for flip
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+    
     // Add hover effect
     card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px) rotateY(10deg)';
+        if (!card.classList.contains('flipped')) {
+            card.style.transform = 'translateY(-10px)';
+        }
     });
     
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0) rotateY(0)';
+        if (!card.classList.contains('flipped')) {
+            card.style.transform = 'translateY(0)';
+        }
     });
 });
 
