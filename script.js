@@ -10,6 +10,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll to top on page load/refresh
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 /**
  * Theme toggle functionality with animations
  */
