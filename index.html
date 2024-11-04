@@ -12,27 +12,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
+            <div class="logo" data-aos="fade-right">
                 <h1>VAISHNAVAM</h1>
                 <span class="subtitle">PREMIUM BOYS HOSTEL</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#rooms" class="nav-link">Rooms</a></li>
-                <li><a href="#dining" class="nav-link">Dining</a></li>
-                <li><a href="#facilities" class="nav-link">Facilities</a></li>
-                <li><a href="#location" class="nav-link">Location</a></li>
-                <li><a href="#contact" class="book-now">Book Now</a></li>
+            <ul class="nav-links" data-aos="fade-left">
+                <li><a href="#home" class="nav-link hover-effect">Home</a></li>
+                <li><a href="#rooms" class="nav-link hover-effect">Rooms</a></li>
+                <li><a href="#dining" class="nav-link hover-effect">Dining</a></li>
+                <li><a href="#facilities" class="nav-link hover-effect">Facilities</a></li>
+                <li><a href="#location" class="nav-link hover-effect">Location</a></li>
+                <li><a href="#contact" class="btn book-now pulse-effect">Book Now</a></li>
             </ul>
-            <div class="nav-controls">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+            <div class="nav-controls" data-aos="fade-left">
+                <button id="theme-toggle" class="btn theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon rotate-effect"></i>
                 </button>
-                <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                <button class="btn nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -41,25 +42,25 @@
 
     <main>
         <section class="hero" id="home">
-            <div class="hero-slider">
+            <div class="hero-slider" data-aos="fade-up">
                 <div class="hero-slide active">
                     <div class="hero-content">
-                        <h2>Experience Premium Living</h2>
-                        <p>Modern accommodation designed for academic excellence</p>
-                        <a href="#contact" class="cta-button">Reserve Your Room</a>
+                        <h2 class="typing-effect">Experience Premium Living</h2>
+                        <p class="fade-in-effect">Modern accommodation designed for academic excellence</p>
+                        <a href="#contact" class="btn cta-button bounce-effect">Reserve Your Room</a>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-indicator bounce-effect" aria-hidden="true">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </section>
 
         <section class="rooms" id="rooms">
             <div class="container">
-                <h2>Premium Accommodations</h2>
-                <div class="room-grid">
-                    <div class="flashcard">
+                <h2 data-aos="fade-up">Premium Accommodations</h2>
+                <div class="room-grid grid">
+                    <div class="flashcard" data-aos="flip-left">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <img src="room-standard.jpg" alt="Standard Room Interior" loading="lazy">
@@ -68,19 +69,19 @@
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Standard Room Features</h3>
-                                    <ul>
-                                        <li><i class="fas fa-bed"></i> Single/Double Occupancy</li>
-                                        <li><i class="fas fa-desk"></i> Study Table & Chair</li>
-                                        <li><i class="fas fa-door-closed"></i> Wardrobe</li>
-                                        <li><i class="fas fa-bolt"></i> 24/7 Power Backup</li>
-                                        <li><i class="fas fa-broom"></i> Daily Housekeeping</li>
+                                    <ul class="feature-list">
+                                        <li class="slide-in-effect"><i class="fas fa-bed"></i> Single/Double Occupancy</li>
+                                        <li class="slide-in-effect"><i class="fas fa-desk"></i> Study Table & Chair</li>
+                                        <li class="slide-in-effect"><i class="fas fa-door-closed"></i> Wardrobe</li>
+                                        <li class="slide-in-effect"><i class="fas fa-bolt"></i> 24/7 Power Backup</li>
+                                        <li class="slide-in-effect"><i class="fas fa-broom"></i> Daily Housekeeping</li>
                                     </ul>
-                                    <a href="#contact" class="room-link">Book Now</a>
+                                    <a href="#contact" class="btn room-link pulse-effect">Book Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="flip-right">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <img src="room-deluxe.jpg" alt="Deluxe Room Interior" loading="lazy">
@@ -89,14 +90,14 @@
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Deluxe Room Features</h3>
-                                    <ul>
-                                        <li><i class="fas fa-star"></i> Premium Furnishings</li>
-                                        <li><i class="fas fa-expand-alt"></i> Larger Space</li>
-                                        <li><i class="fas fa-door-open"></i> Private Balcony</li>
-                                        <li><i class="fas fa-concierge-bell"></i> Enhanced Amenities</li>
-                                        <li><i class="fas fa-map-marker-alt"></i> Premium Location</li>
+                                    <ul class="feature-list">
+                                        <li class="slide-in-effect"><i class="fas fa-star"></i> Premium Furnishings</li>
+                                        <li class="slide-in-effect"><i class="fas fa-expand-alt"></i> Larger Space</li>
+                                        <li class="slide-in-effect"><i class="fas fa-door-open"></i> Private Balcony</li>
+                                        <li class="slide-in-effect"><i class="fas fa-concierge-bell"></i> Enhanced Amenities</li>
+                                        <li class="slide-in-effect"><i class="fas fa-map-marker-alt"></i> Premium Location</li>
                                     </ul>
-                                    <a href="#contact" class="room-link">Book Now</a>
+                                    <a href="#contact" class="btn room-link pulse-effect">Book Now</a>
                                 </div>
                             </div>
                         </div>
@@ -107,9 +108,9 @@
 
         <section class="dining" id="dining">
             <div class="container">
-                <h2>Dining Excellence</h2>
+                <h2 data-aos="fade-up">Dining Excellence</h2>
                 <div class="dining-content">
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="zoom-in">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <img src="dining-hall.jpg" alt="Modern Dining Facility" loading="lazy">
@@ -118,12 +119,12 @@
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Culinary Features</h3>
-                                    <ul>
-                                        <li><i class="fas fa-utensils"></i> Breakfast, Lunch & Dinner</li>
-                                        <li><i class="fas fa-leaf"></i> Vegetarian & Non-vegetarian options</li>
-                                        <li><i class="fas fa-check-circle"></i> Hygienic preparation</li>
-                                        <li><i class="fas fa-apple-alt"></i> Special diet accommodation</li>
-                                        <li><i class="fas fa-kitchen-set"></i> Modern Kitchen Facilities</li>
+                                    <ul class="feature-list">
+                                        <li class="slide-in-effect"><i class="fas fa-utensils"></i> Breakfast, Lunch & Dinner</li>
+                                        <li class="slide-in-effect"><i class="fas fa-leaf"></i> Vegetarian & Non-vegetarian options</li>
+                                        <li class="slide-in-effect"><i class="fas fa-check-circle"></i> Hygienic preparation</li>
+                                        <li class="slide-in-effect"><i class="fas fa-apple-alt"></i> Special diet accommodation</li>
+                                        <li class="slide-in-effect"><i class="fas fa-kitchen-set"></i> Modern Kitchen Facilities</li>
                                     </ul>
                                 </div>
                             </div>
@@ -135,56 +136,56 @@
 
         <section class="facilities" id="facilities">
             <div class="container">
-                <h2>Premium Amenities</h2>
-                <div class="facilities-grid">
-                    <div class="flashcard">
+                <h2 data-aos="fade-up">Premium Amenities</h2>
+                <div class="facilities-grid grid">
+                    <div class="flashcard" data-aos="zoom-in">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-wifi bounce-effect"></i>
                                 <h3>High-Speed WiFi</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
-                                    <p>Enterprise-grade internet connectivity for seamless online learning</p>
+                                    <p class="fade-in-effect">Enterprise-grade internet connectivity for seamless online learning</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="zoom-in" data-aos-delay="100">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-shield-alt bounce-effect"></i>
                                 <h3>Advanced Security</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
-                                    <p>24/7 security with CCTV surveillance and access control</p>
+                                    <p class="fade-in-effect">24/7 security with CCTV surveillance and access control</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="zoom-in" data-aos-delay="200">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-dumbbell"></i>
+                                <i class="fas fa-dumbbell bounce-effect"></i>
                                 <h3>Fitness Center</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
-                                    <p>State-of-the-art gym with professional equipment</p>
+                                    <p class="fade-in-effect">State-of-the-art gym with professional equipment</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="zoom-in" data-aos-delay="300">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
-                                <i class="fas fa-book"></i>
+                                <i class="fas fa-book bounce-effect"></i>
                                 <h3>Study Zones</h3>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
-                                    <p>Dedicated quiet areas with ergonomic furniture for focused studying</p>
+                                    <p class="fade-in-effect">Dedicated quiet areas with ergonomic furniture for focused studying</p>
                                 </div>
                             </div>
                         </div>
@@ -195,9 +196,9 @@
 
         <section class="location" id="location">
             <div class="container">
-                <h2>Strategic Location</h2>
+                <h2 data-aos="fade-up">Strategic Location</h2>
                 <div class="location-content">
-                    <div class="map-container">
+                    <div class="map-container" data-aos="fade-right">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4851.3466550176345!2d76.43262000000001!3d10.902285599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d781126542e7%3A0x50d06a00f12c3817!2sVAISHNAVAM%20boys%20hostel!5e1!3m2!1sen!2sin!4v1730634430463!5m2!1sen!2sin"
                             width="100%" 
@@ -209,16 +210,16 @@
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div class="flashcard">
+                    <div class="flashcard" data-aos="fade-left">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">
                                 <h3>Prime Location</h3>
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt bounce-effect"></i>
                             </div>
                             <div class="flashcard-back">
                                 <div class="flashcard-content">
                                     <h3>Address</h3>
-                                    <address>
+                                    <address class="fade-in-effect">
                                         Vaishnavam Boys Hostel<br>
                                         Mannampatta, Sreekrishnapuram<br>
                                         Kerala 679513
@@ -233,43 +234,43 @@
 
         <section class="contact" id="contact">
             <div class="container">
-                <h2>Connect With Us</h2>
+                <h2 data-aos="fade-up">Connect With Us</h2>
                 <div class="contact-wrapper">
                     <div class="contact-info">
-                        <div class="flashcard">
+                        <div class="flashcard" data-aos="flip-left">
                             <div class="flashcard-inner">
                                 <div class="flashcard-front">
-                                    <i class="fas fa-phone"></i>
+                                    <i class="fas fa-phone bounce-effect"></i>
                                     <h3>Direct Contact</h3>
                                 </div>
                                 <div class="flashcard-back">
                                     <div class="flashcard-content">
-                                        <p><a href="tel:+917306899218" class="contact-link">+91 7306 899 218</a></p>
+                                        <p><a href="tel:+917306899218" class="contact-link hover-effect">+91 7306 899 218</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flashcard">
+                        <div class="flashcard" data-aos="flip-right">
                             <div class="flashcard-inner">
                                 <div class="flashcard-front">
-                                    <i class="fab fa-whatsapp"></i>
+                                    <i class="fab fa-whatsapp bounce-effect"></i>
                                     <h3>WhatsApp</h3>
                                 </div>
                                 <div class="flashcard-back">
                                     <div class="flashcard-content">
-                                        <p><a href="https://wa.me/917306899218" class="contact-link">Connect on WhatsApp</a></p>
+                                        <p><a href="https://wa.me/917306899218" class="contact-link hover-effect">Connect on WhatsApp</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" id="enquiryForm">
+                    <form class="contact-form" id="enquiryForm" data-aos="fade-up">
                         <h3>Reservation Enquiry</h3>
-                        <input type="text" placeholder="Full Name" required aria-label="Full Name">
-                        <input type="email" placeholder="Email Address" required aria-label="Email Address">
-                        <input type="tel" placeholder="Phone Number" required aria-label="Phone Number">
-                        <textarea placeholder="Your Message" required aria-label="Your Message"></textarea>
-                        <button type="submit" class="submit-btn">Submit Enquiry</button>
+                        <input type="text" placeholder="Full Name" required aria-label="Full Name" class="input-effect">
+                        <input type="email" placeholder="Email Address" required aria-label="Email Address" class="input-effect">
+                        <input type="tel" placeholder="Phone Number" required aria-label="Phone Number" class="input-effect">
+                        <textarea placeholder="Your Message" required aria-label="Your Message" class="input-effect"></textarea>
+                        <button type="submit" class="submit-btn pulse-effect">Submit Enquiry</button>
                     </form>
                 </div>
             </div>
@@ -279,23 +280,23 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
+                <div class="footer-brand" data-aos="fade-right">
                     <h3>VAISHNAVAM</h3>
                     <p>Excellence in Student Living</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-links" data-aos="fade-up">
                     <h4>Quick Navigation</h4>
                     <ul>
-                        <li><a href="#rooms">Accommodations</a></li>
-                        <li><a href="#facilities">Amenities</a></li>
-                        <li><a href="#location">Location</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#rooms" class="hover-effect">Accommodations</a></li>
+                        <li><a href="#facilities" class="hover-effect">Amenities</a></li>
+                        <li><a href="#location" class="hover-effect">Location</a></li>
+                        <li><a href="#contact" class="hover-effect">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
+                <div class="footer-social" data-aos="fade-left">
                     <h4>Stay Connected</h4>
                     <div class="social-links">
-                        <a href="https://wa.me/917306899218" aria-label="Connect on WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/917306899218" aria-label="Connect on WhatsApp" class="social-link bounce-effect"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -305,6 +306,14 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
