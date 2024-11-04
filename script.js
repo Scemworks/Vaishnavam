@@ -52,6 +52,11 @@ const initThemeToggle = () => {
             height: 300px;
             perspective: 1000px;
             margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .flashcard:hover {
+            transform: translateY(-5px);
         }
         
         .flashcard-inner {
@@ -75,8 +80,8 @@ const initThemeToggle = () => {
             align-items: center;
             padding: 2rem;
             background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px var(--card-shadow);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px var(--card-shadow);
         }
         
         .card-back {
@@ -89,14 +94,14 @@ const initThemeToggle = () => {
         }
         
         .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             color: var(--card-text);
         }
         
         .card-description {
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             color: var(--card-text);
             opacity: 0.9;
@@ -152,26 +157,26 @@ const initThemeToggle = () => {
 };
 
 /**
- * Initializes interactive feature cards with flip animation
+ * Initializes interactive feature cards with flip animation and hover effects
  */
 const initFlashcards = () => {
     const features = [
         {
             title: 'Luxury Rooms',
-            frontDescription: 'Experience ultimate comfort',
-            backDescription: 'Meticulously designed rooms with modern amenities',
+            frontDescription: 'Experience ultimate comfort in our premium suites',
+            backDescription: 'Meticulously designed rooms featuring king-size beds, smart TVs, and panoramic views',
             icon: 'fas fa-bed'
         },
         {
             title: 'Fine Dining',
-            frontDescription: 'Exquisite cuisine',
-            backDescription: 'Delicious meals prepared by expert chefs',
+            frontDescription: 'Savor world-class culinary delights',
+            backDescription: 'Award-winning chefs create unforgettable dining experiences with local ingredients',
             icon: 'fas fa-utensils'
         },
         {
             title: 'Wellness Center',
-            frontDescription: 'Rejuvenate yourself',
-            backDescription: 'Premium facilities for your health and wellness',
+            frontDescription: 'Your journey to relaxation begins here',
+            backDescription: 'State-of-the-art spa facilities, yoga studio, and personalized wellness programs',
             icon: 'fas fa-spa'
         }
     ];
@@ -182,7 +187,7 @@ const initFlashcards = () => {
             <div class="flashcard">
                 <div class="flashcard-inner">
                     <div class="card-front">
-                        <i class="${feature.icon} fa-3x"></i>
+                        <i class="${feature.icon} fa-4x" style="margin-bottom: 1.5rem; color: var(--accent-color)"></i>
                         <h3 class="card-title">${feature.title}</h3>
                         <p class="card-description">${feature.frontDescription}</p>
                     </div>
@@ -194,9 +199,10 @@ const initFlashcards = () => {
             </div>
         `).join('');
 
-        // Initialize flip animation handlers
+        // Initialize flip animation handlers with smooth transitions
         document.querySelectorAll('.flashcard-inner').forEach(card => {
             card.addEventListener('click', () => {
+                card.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
                 card.classList.toggle('flipped');
             });
         });
